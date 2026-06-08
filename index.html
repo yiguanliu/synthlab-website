@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-<meta name="description" content="Synthlab builds custom simulated worlds that generate the training data AI and computer-vision systems need, especially the rare faults and edge cases real-world footage can't supply.">
-<meta property="og:title" content="Synthlab: training data for the things that rarely happen">
-<meta property="og:description" content="We build simulated worlds that produce the images, labels, and edge cases AI systems need to learn from, on demand, at any scale.">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Synthlab builds bespoke synthetic datasets for AI and ML training — procedurally generated, pixel-perfect, built to find the faults and edge cases real-world data can't capture.">
+<meta property="og:title" content="Synthlab — Bespoke Synthetic Data for AI/ML Training">
+<meta property="og:description" content="Procedurally generated, pixel-perfect training data built to find the faults and edge cases real-world datasets can't capture.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/RGB.png">
-<title>Synthlab: training data for the things that rarely happen</title>
+<title>Synthlab — Bespoke Synthetic Data for AI/ML Training</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,203 +18,313 @@
   <div class="nav-inner">
     <a href="#top" class="logo">Synthlab</a>
     <nav>
-      <a href="#look">See it work</a>
-      <a href="#approach">Approach</a>
-      <a href="#manufacturing">Manufacturing</a>
+      <a href="#solution">Solution</a>
+      <a href="#deliver">Deliverables</a>
+      <a href="#focus">Focus</a>
       <a href="#about">About</a>
       <a href="#contact" class="nav-cta">Talk to us</a>
     </nav>
   </div>
 </header>
 
+<!-- HERO -->
 <section id="top" class="hero">
   <div class="hero-layout">
     <div class="hero-inner">
-      <h1 data-reveal>We build the data that teaches machines to see what they've never seen.</h1>
-      <p class="lead" data-reveal data-reveal-delay="1">
-        Synthlab builds simulated worlds that generate the rare, strange,
-        and dangerous moments real-world footage almost never captures, so AI systems can learn from them anyway.
+      <p class="hero-label">Synthlab / synthlab.io</p>
+      <h1>Bespoke synthetic data for AI&nbsp;&amp;&nbsp;ML training.</h1>
+      <p class="lead">
+        Procedurally generated, pixel-perfect training data — built to find
+        the faults and edge cases real-world datasets can't capture.
       </p>
-      <div class="hero-actions" data-reveal data-reveal-delay="2">
+      <div class="hero-actions">
         <a href="#contact" class="btn-primary">Talk to us</a>
-        <a href="#look" class="btn-ghost">See it work</a>
+        <a href="#solution" class="btn-ghost">See how it works</a>
       </div>
     </div>
-
     <div class="hero-wave-wrap" aria-hidden="true">
       <canvas id="hero-chart" class="hero-chart-canvas"></canvas>
     </div>
   </div>
 </section>
 
-<section id="look" class="section">
-  <p class="eyebrow" data-reveal>See it work</p>
-  <h2 data-reveal>One scene. Generated, then labelled. Automatically.</h2>
-  <p class="section-lead" data-reveal data-reveal-delay="1">
-    The same simulated image, shown two ways: first as a camera would see it,
-    then with the object found and outlined, with no human involved in either step.
-  </p>
+<!-- THE PROBLEM -->
+<section id="problem" class="section section-ruled">
+  <div class="section-header">
+    <p class="eyebrow">01 — The problem</p>
+    <h2>Real-world training data is slow, costly, and structurally biased toward the common case.</h2>
+    <p class="section-lead">The faults and failure states that matter most are exactly what real datasets contain the least of.</p>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <span class="problem-num">I</span>
+      <h3>Slow to collect</h3>
+      <p>Capturing enough footage to cover every operating condition can take months — long before a model ever sees it.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-num">II</span>
+      <h3>Expensive to label</h3>
+      <p>Manual annotation — boxes, masks, metadata — is costly, error-prone, and difficult to scale to millions of frames.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-num">III</span>
+      <h3>Edge cases are rare by definition</h3>
+      <p>The rare defects and failure states that matter most are exactly what real datasets contain the least of.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-num">IV</span>
+      <h3>Privacy &amp; access constraints</h3>
+      <p>Footage from factory floors, infrastructure sites, and proprietary equipment is often sensitive, restricted, or off-limits.</p>
+    </div>
+  </div>
+</section>
 
-  <div class="showcase" data-reveal data-reveal-delay="2">
+<!-- THE SOLUTION -->
+<section id="solution" class="section section-dark">
+  <div class="section-header">
+    <p class="eyebrow">02 — The solution</p>
+    <h2>We build the world, then film it — procedurally, on demand, at any scale.</h2>
+    <p class="section-lead">Instead of waiting to encounter a rare fault in the wild, we construct it — and every plausible variant of it — directly inside a controllable, instrumented simulation.</p>
+  </div>
+
+  <p class="process-label">Real2Sim — in three moves</p>
+  <div class="process-steps">
+    <div class="process-step">
+      <span class="step-num">01</span>
+      <h3>Capture reality</h3>
+      <p>Reference geometry, materials, and conditions from the real environment.</p>
+    </div>
+    <div class="process-divider" aria-hidden="true">→</div>
+    <div class="process-step">
+      <span class="step-num">02</span>
+      <h3>Build procedurally</h3>
+      <p>Parametric scene construction in Unreal Engine — infinitely variable, recombined in hours, not months.</p>
+    </div>
+    <div class="process-divider" aria-hidden="true">→</div>
+    <div class="process-step">
+      <span class="step-num">03</span>
+      <h3>Render &amp; extract</h3>
+      <p>Photoreal frames and pixel-perfect ground truth, generated together. Because we build the scene, we know it exactly.</p>
+    </div>
+  </div>
+
+  <div class="callout-row">
+    <div class="callout">
+      <strong>Fast iteration</strong>
+      <p>Procedural scene graphs let us spin up new environments, conditions, and defect variations in hours, not months.</p>
+    </div>
+    <div class="callout">
+      <strong>Complex scenes on demand</strong>
+      <p>Build dense, realistic environments — production lines, sites, sensors — and recombine elements to multiply coverage.</p>
+    </div>
+    <div class="callout">
+      <strong>Total control over ground truth</strong>
+      <p>Because we build the scene, we know it exactly: every label, mask, and measurement is generated, not guessed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DELIVER -->
+<section id="deliver" class="section section-ruled">
+  <div class="section-header">
+    <p class="eyebrow">03 — What we deliver</p>
+    <h2>Every frame ships with the ground truth built right in.</h2>
+    <p class="section-lead">Operating a real2sim pipeline, we generate matched sets — photoreal imagery alongside dense, pixel-accurate annotations that make it useful for training and validation.</p>
+  </div>
+  <div class="deliver-grid">
+    <div class="deliver-item">
+      <span class="deliver-icon" data-icon="camera" aria-hidden="true"></span>
+      <h3>Photorealistic RGB renders</h3>
+      <p>Full sensor simulation — specific camera models, motion blur, dirt, noise, and other real-world factors that disrupt computer vision.</p>
+    </div>
+    <div class="deliver-item">
+      <span class="deliver-icon" data-icon="scan" aria-hidden="true"></span>
+      <h3>Pixel-accurate bounding boxes</h3>
+      <p>Object localisation generated directly from scene data — exact, consistent, and free of human labelling error.</p>
+    </div>
+    <div class="deliver-item">
+      <span class="deliver-icon" data-icon="layers" aria-hidden="true"></span>
+      <h3>Segmentation masks</h3>
+      <p>Per-pixel instance and semantic masks delivered alongside every frame, for dense-prediction training and evaluation.</p>
+    </div>
+    <div class="deliver-item">
+      <span class="deliver-icon" data-icon="box" aria-hidden="true"></span>
+      <h3>Rich scene metadata</h3>
+      <p>Environmental conditions, lighting, camera state, and more — full structured context behind every single image.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE SHOWCASE -->
+<section class="section section-showcase">
+  <div class="section-header">
+    <p class="eyebrow">04 — From the pipeline</p>
+    <h2>Same frame. Same scene. One generation pass.</h2>
+    <p class="section-lead">An example output pair — the rendered frame and its machine-generated annotation, produced together, pixel for pixel.</p>
+  </div>
+  <div class="showcase">
     <figure>
-      <img src="assets/RGB.png" alt="A realistic simulated image of a manufacturing component" width="1920" height="1080" loading="lazy" decoding="async">
-      <figcaption><strong>What the camera sees</strong>: lighting, materials, and imperfections, all simulated.</figcaption>
+      <img src="assets/RGB.png" alt="Photorealistic simulated RGB render of a manufacturing component" width="1920" height="1080" loading="lazy" decoding="async">
+      <figcaption><strong>Photorealistic RGB render</strong> — lighting, materials, and imperfections, all simulated.</figcaption>
     </figure>
     <figure>
-      <img src="assets/annotated_bounding_box.png" alt="The same image with the object automatically located and labelled in a box" width="1920" height="1080" loading="lazy" decoding="async">
-      <figcaption><strong>What the system learns from</strong>: the object located and labelled the instant the image is made.</figcaption>
+      <img src="assets/annotated_bounding_box.png" alt="The same image with an automatically generated bounding box annotation" width="1920" height="1080" loading="lazy" decoding="async">
+      <figcaption><strong>Auto-generated bounding box annotation</strong> — exact, consistent, produced at render time.</figcaption>
     </figure>
   </div>
 </section>
 
-<section id="approach" class="section alt">
-  <p class="eyebrow" data-reveal>The problem</p>
-  <h2 data-reveal>The data you need most is the<br>data you have the least of</h2>
-  <p class="section-lead" data-reveal data-reveal-delay="1">
-    To train a system to spot a fault, you need examples of it. But faults are
-    rare. That's what makes them faults. Waiting to collect enough real ones
-    costs time, money, and risk you can't get back.
-  </p>
-
-  <div class="stat-row" data-reveal data-reveal-delay="2">
-    <div class="stat">
-      <span class="stat-num">Months</span>
-      <span class="stat-label">to capture enough real footage of one rare fault</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">Manual</span>
-      <span class="stat-label">labelling: slow, costly, and inconsistent</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">Limited</span>
-      <span class="stat-label">access to sensitive sites and equipment</span>
-    </div>
+<!-- FOCUS INDUSTRY -->
+<section id="focus" class="section section-dark">
+  <div class="section-header">
+    <p class="eyebrow">05 — Focus industry</p>
+    <h2>Manufacturing — fault &amp; edge case detection.</h2>
+    <p class="section-lead">Our current focus is generating the data computer-vision systems need to catch what matters most on a production line: the rare defect, the unusual condition, the fault nobody photographed yet.</p>
   </div>
-</section>
-
-<section class="section diagram-section">
-  <p class="eyebrow" data-reveal>Our approach</p>
-  <h2 data-reveal>So we build the world ourselves</h2>
-  <p class="section-lead" data-reveal data-reveal-delay="1">
-    Instead of waiting to find a fault in the wild, we build a realistic,
-    controllable version of where it happens, and generate the data straight from it.
-  </p>
-
-  <svg class="wave-graphic" viewBox="0 0 1000 220" fill="none" aria-hidden="true" data-reveal data-reveal-delay="1">
-    <line x1="0" y1="110" x2="1000" y2="110" stroke="currentColor" stroke-opacity="0.25" stroke-width="1"/>
-    <path d="M0 60 C 80 200, 180 200, 260 110 C 340 20, 440 20, 520 110 C 600 200, 700 200, 780 110 C 860 20, 940 20, 1000 80" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 5" opacity="0.45"/>
-    <path d="M0 110 C 100 30, 220 30, 320 110 C 420 190, 540 190, 640 110 C 740 30, 860 30, 1000 110" stroke="var(--accent)" stroke-width="2.5"/>
-    <circle cx="320" cy="110" r="4" fill="var(--accent)"/>
-    <circle cx="640" cy="110" r="4" fill="var(--accent)"/>
-  </svg>
-
-  <div class="diagram" role="list" data-diagram data-reveal data-reveal-delay="2">
-    <div class="diagram-track" aria-hidden="true">
-      <div class="diagram-track-fill" data-diagram-fill></div>
-    </div>
-    <div class="diagram-steps">
-      <div class="diagram-step" role="listitem" data-diagram-step="0">
-        <span class="diagram-icon" data-icon="scan" aria-hidden="true"></span>
-        <h3>Study the real thing</h3>
-        <p>We capture how the real environment looks and behaves: its geometry, materials, and lighting.</p>
-      </div>
-      <span class="diagram-arrow" data-icon="arrowRight" aria-hidden="true"></span>
-      <div class="diagram-step" role="listitem" data-diagram-step="1">
-        <span class="diagram-icon" data-icon="layers" aria-hidden="true"></span>
-        <h3>Rebuild it, flexibly</h3>
-        <p>We recreate it as a controllable scene, adjusting conditions and faults to create endless realistic variety.</p>
-      </div>
-      <span class="diagram-arrow" data-icon="arrowRight" aria-hidden="true"></span>
-      <div class="diagram-step" role="listitem" data-diagram-step="2">
-        <span class="diagram-icon" data-icon="sparkles" aria-hidden="true"></span>
-        <h3>Generate, pre-labelled</h3>
-        <p>Every image arrives already labelled, because the scene knows the answer before the picture is taken.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="manufacturing" class="section alt">
-  <p class="eyebrow" data-reveal>Where we focus today</p>
-  <h2 data-reveal>Catching the fault before<br>it becomes a problem</h2>
-  <p class="section-lead" data-reveal data-reveal-delay="1">
-    We focus on one of the hardest problems in computer vision: teaching a
-    system to recognise the faults that are too rare, varied, or costly to
-    photograph enough of in real life.
-  </p>
-
-  <ul class="point-list" data-reveal data-reveal-delay="2">
+  <p class="focus-hed">Why synthetic wins on the factory floor</p>
+  <ul class="point-list">
     <li>
       <span class="point-icon" data-icon="factory" aria-hidden="true"></span>
       <div>
-        <h3>Every fault, on demand</h3>
-        <p>Any defect, any severity, any background: generated as often as needed, instead of waited for.</p>
+        <h3>Defects are rare — so we manufacture them</h3>
+        <p>Synthetic generation lets us produce the exact failure modes inspection systems need to learn, at any frequency.</p>
       </div>
     </li>
     <li>
       <span class="point-icon" data-icon="cog" aria-hidden="true"></span>
       <div>
-        <h3>Every condition, under control</h3>
-        <p>Lighting, angle, dirt, motion, weather: all adjustable, so training covers the full range of reality.</p>
+        <h3>Every condition is controllable</h3>
+        <p>Lighting, camera angle, sensor characteristics, surface wear, dirt, motion blur — models train on the full range of what they'll see on the floor.</p>
       </div>
     </li>
     <li>
       <span class="point-icon" data-icon="shield" aria-hidden="true"></span>
       <div>
-        <h3>Answers you can trust</h3>
-        <p>We build the scene, so there's no guesswork. Labels are always exactly correct.</p>
+        <h3>Ground truth is exact by construction</h3>
+        <p>No ambiguity about where a fault begins or ends — the scene and the fault were built to spec.</p>
+      </div>
+    </li>
+    <li>
+      <span class="point-icon" data-icon="sparkles" aria-hidden="true"></span>
+      <div>
+        <h3>Coverage scales with compute, not failures</h3>
+        <p>The same engine extends naturally to new lines, products, and inspection setups without waiting for real incidents.</p>
       </div>
     </li>
   </ul>
 </section>
 
-<section id="about" class="section">
-  <p class="eyebrow" data-reveal>Why us</p>
-  <h2 data-reveal>A track record on hard,<br>real-world problems</h2>
-  <p class="section-lead" data-reveal data-reveal-delay="1">
-    We've already built simulation work trusted by some of the most demanding
-    organisations in the world, and we're bringing that rigour to manufacturing.
-  </p>
-
-  <div class="logo-row" data-reveal data-reveal-delay="2">
-    <span>Google</span>
-    <span>Foster + Partners</span>
-    <span>DeepMind</span>
+<!-- WHY SYNTHLAB -->
+<section class="section section-ruled">
+  <div class="section-header">
+    <p class="eyebrow">06 — Why Synthlab</p>
+    <h2>Built on tools we control, end to end.</h2>
+    <p class="section-lead">We're not assembling a pipeline from off-the-shelf parts — the systems that matter most, scene generation and ground-truth extraction, are ours, built specifically for pixel-level accuracy.</p>
   </div>
-
-  <div class="about-grid" data-reveal data-reveal-delay="3">
-    <div class="about-card">
-      <span class="about-icon" data-icon="building" aria-hidden="true"></span>
-      <h3>Architecture &amp; cities</h3>
-      <p>Simulation work trusted by globally renowned firms, from technology leaders to award-winning architecture practices.</p>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h3>Custom procedural toolset</h3>
+      <p>Purpose-built tools for scene generation on top of Unreal Engine — construct and reconfigure complex environments fast, rather than hand-building each one.</p>
     </div>
-    <div class="about-card">
-      <span class="about-icon" data-icon="drone" aria-hidden="true"></span>
-      <h3>Proven at scale, in the air</h3>
-      <p>Large-scale simulated datasets for the civil drone industry, and direct work with one of the UK's largest infrastructure providers.</p>
+    <div class="tech-card">
+      <h3>Pixel-accurate ground truth, by design</h3>
+      <p>A custom-made data-extraction system reads truth directly from the scene — boxes, masks, and metadata are exact, not estimated or hand-labelled.</p>
     </div>
-    <div class="about-card">
-      <span class="about-icon" data-icon="globe" aria-hidden="true"></span>
-      <h3>Built to expand</h3>
-      <p>The same approach generalises to any setting where real-world data is scarce, costly, or too risky to gather.</p>
+    <div class="tech-card">
+      <h3>Unreal Engine as the rendering core</h3>
+      <p>Production-grade real-time rendering gives us photorealism, full sensor simulation, and the speed to iterate at scale.</p>
+    </div>
+    <div class="tech-card tech-card-accent">
+      <h3>MuJoCo integration — in progress</h3>
+      <p>We're extending our pipeline with MuJoCo for advanced physics simulation — adding accurate dynamics to our procedurally generated scenes.</p>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section cta-section">
-  <p class="eyebrow" data-reveal>Get started</p>
-  <h2 data-reveal>Tell us what you're trying to teach a machine to see.</h2>
-  <p class="section-lead" data-reveal data-reveal-delay="1">
-    However rare the scenario, we can likely build it, and generate the data your system needs to learn from it.
-  </p>
-  <a href="mailto:info@synthlab.io" class="btn-primary contact-btn" data-reveal data-reveal-delay="2">
-    <span class="point-icon small" data-icon="mail" aria-hidden="true"></span>
+<!-- TRACK RECORD -->
+<section id="about" class="section section-dark">
+  <div class="section-header">
+    <p class="eyebrow">07 — Track record</p>
+    <h2>Proven on hard problems, with serious partners.</h2>
+    <p class="section-lead">We've already built simulation work trusted by some of the most demanding organisations in the world, and we're bringing that rigour to manufacturing.</p>
+  </div>
+  <div class="clients-row">
+    <span class="client-logo" title="Google">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Google"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+      <span>Google</span>
+    </span>
+    <span class="client-logo client-logo-text" title="Foster + Partners">
+      Foster&nbsp;+&nbsp;Partners
+    </span>
+    <span class="client-logo" title="DeepMind">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-label="DeepMind"><path d="m5.99,1.62a8.54,8.54 0 0 0 -2.54,6.83c0.35,4.4 4.51,7.99 8.28,7.99c3.5,0 4.88,-3.06 4.54,-5.14a4.32,4.32 0 0 0 -0.95,-2.07c0.63,0.34 1.24,0.77 1.81,1.3c1.52,1.41 2.44,3.23 2.58,5.1c0.33,4.13 -2.73,8.37 -7.85,8.37c-1.69,0 -3.48,-0.43 -4.98,-1.14c-4.06,-1.92 -6.88,-6.06 -6.88,-10.86c0,-4.43 2.41,-8.3 5.99,-10.38zm6.15,-1.62c1.69,0 3.48,0.43 4.98,1.14a12,12 0 0 1 6.88,10.86c0,4.43 -2.41,8.3 -5.99,10.38a8.54,8.54 0 0 0 2.54,-6.83c-0.35,-4.4 -4.51,-7.99 -8.28,-7.99c-3.5,0 -4.88,3.06 -4.54,5.14a4.3,4.3 0 0 0 0.96,2.07a8.72,8.72 0 0 1 -1.81,-1.3c-1.52,-1.41 -2.44,-3.23 -2.59,-5.1c-0.33,-4.13 2.73,-8.37 7.85,-8.37z"/></svg>
+      <span>DeepMind</span>
+    </span>
+  </div>
+  <div class="track-grid">
+    <div class="track-card">
+      <span class="track-icon" data-icon="building" aria-hidden="true"></span>
+      <h3>Architecture &amp; built environment</h3>
+      <p>Simulation work within the AEC industry, collaborating with globally recognised firms from technology leaders to award-winning architecture practices.</p>
+    </div>
+    <div class="track-card">
+      <span class="track-icon" data-icon="drone" aria-hidden="true"></span>
+      <h3>Civil drone sector, at scale</h3>
+      <p>Large-scale synthetic datasets for real-world aerial computer vision — building data pipelines that work in production, not just in the lab.</p>
+    </div>
+    <div class="track-card">
+      <span class="track-icon" data-icon="globe" aria-hidden="true"></span>
+      <h3>UK infrastructure — direct deployment</h3>
+      <p>Direct work with one of the largest infrastructure providers in the UK, applying simulation and synthetic data to real operational challenges.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="section section-ruled">
+  <div class="section-header">
+    <p class="eyebrow">08 — Vision</p>
+    <h2>Manufacturing is where we start — not where we stop.</h2>
+    <p class="section-lead">The same procedural, pixel-accurate pipeline that detects faults on a production line generalises to any domain where real-world data is scarce, costly, or sensitive.</p>
+  </div>
+  <div class="vision-list">
+    <div class="vision-item">
+      <span class="vision-marker">→</span>
+      <div>
+        <h3>Adjacent industrial domains</h3>
+        <p>Logistics, energy, infrastructure inspection — anywhere edge-case coverage is the bottleneck to a better model.</p>
+      </div>
+    </div>
+    <div class="vision-item">
+      <span class="vision-marker">→</span>
+      <div>
+        <h3>Robotics &amp; autonomy</h3>
+        <p>Physics-rich scenes for embodied training, powered by our MuJoCo integration — accurate dynamics in synthetic environments.</p>
+      </div>
+    </div>
+    <div class="vision-item">
+      <span class="vision-marker">→</span>
+      <div>
+        <h3>Any data-scarce domain</h3>
+        <p>Any sector where machines need to learn to see things that rarely happen, but matter most when they do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section-contact">
+  <h2 class="contact-hed">Let's build<br>your data.</h2>
+  <p class="contact-sub">Synthetic data, built around your problem.</p>
+  <a href="mailto:info@synthlab.io" class="btn-primary contact-btn">
+    <span data-icon="mail" aria-hidden="true"></span>
     info@synthlab.io
   </a>
+  <p class="contact-note">Bespoke synthetic datasets for AI &amp; ML training</p>
 </section>
 
 <div class="ticker" aria-hidden="true">
-  <span>+ SYNTHLAB.IO</span>
+  <span>SYNTHLAB.IO</span>
   <span class="ticker-sep"></span>
   <span>SYNTHETIC DATA</span>
   <span class="ticker-sep"></span>

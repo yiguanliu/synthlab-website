@@ -15,14 +15,14 @@
   const T_MIN = 0, T_MAX = 4;
   const Y_MIN = -1.2, Y_MAX = 1.2;
 
-  // Colors — yellow/black theme
-  const BG       = '#f5cf16';
-  const PLOT_BG  = '#f5cf16';
-  const GRID     = 'rgba(21,20,15,0.12)';
-  const AXIS_CLR = 'rgba(21,20,15,0.55)';
-  const W_CLR    = 'rgba(21,20,15,0.9)';
-  const W_CLR2   = 'rgba(21,20,15,0.5)';
-  const DOT_CLR  = '#15140f';
+  // Colors — black/white editorial theme
+  const BG       = '#ffffff';
+  const PLOT_BG  = '#ffffff';
+  const GRID     = 'rgba(15,15,15,0.08)';
+  const AXIS_CLR = 'rgba(15,15,15,0.45)';
+  const W_CLR    = 'rgba(15,15,15,0.9)';
+  const W_CLR2   = 'rgba(15,15,15,0.35)';
+  const DOT_CLR  = '#0f0f0f';
 
   let W, H, PW, PH;
 
@@ -146,7 +146,7 @@
       const cy = ty(y);
       // vertical dashed line
       ctx.save();
-      ctx.strokeStyle = 'rgba(21,20,15,0.3)';
+      ctx.strokeStyle = 'rgba(15,15,15,0.2)';
       ctx.lineWidth = 1;
       ctx.setLineDash([4, 4]);
       ctx.beginPath();
@@ -154,17 +154,16 @@
       ctx.lineTo(cx, MT + PH);
       ctx.stroke();
       ctx.restore();
-      // outer glow ring
       ctx.beginPath();
       ctx.arc(cx, cy, 7, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(21,20,15,0.12)';
+      ctx.fillStyle = 'rgba(15,15,15,0.08)';
       ctx.fill();
       // filled dot
       ctx.beginPath();
       ctx.arc(cx, cy, 4, 0, Math.PI * 2);
       ctx.fillStyle = DOT_CLR;
       ctx.fill();
-      ctx.strokeStyle = 'rgba(245,207,22,0.9)';
+      ctx.strokeStyle = 'rgba(255,255,255,0.9)';
       ctx.lineWidth = 1;
       ctx.stroke();
     });
@@ -174,9 +173,9 @@
     const barY = H - 16;
     const barH = 12;
     ctx.save();
-    ctx.fillStyle = 'rgba(21,20,15,0.55)';
+    ctx.fillStyle = 'rgba(15,15,15,0.6)';
     ctx.fillRect(0, barY, W, 2);
-    ctx.strokeStyle = 'rgba(21,20,15,0.35)';
+    ctx.strokeStyle = 'rgba(15,15,15,0.3)';
     ctx.lineWidth = 1;
     const spacing = 9;
     for (let x = -barH; x < W + barH; x += spacing) {
@@ -233,6 +232,124 @@
 
   window.addEventListener('resize', () => { resize(); });
 
+  resize();
+  loop();
+})();
+
+// Approach section — minimal looping sine wave with hover crosshair
+(function () {
+  const canvas = document.getElementById('approach-chart');
+  if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const ctx = canvas.getContext('2d');
+  const DPR = window.devicePixelRatio || 1;
+
+  const INK  = 'rgba(15,15,15,';
+  const BG   = '#ffffff';
+
+  let W, H, offset = 0, paused = false, hoverX = null;
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    canvas.width  = W * DPR;
+    canvas.height = H * DPR;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  // Map canvas x → wave y using scrolling offset
+  function solidY(x)  {
+    const t = (x / W) * 4 + offset;
+    return H / 2 + (H * 0.34) * Math.exp(-0.1 * 2 * Math.PI * (x/W)*4) * Math.cos(2 * Math.PI * t);
+  }
+  function dashedY(x) {
+    const t = (x / W) * 4 + offset * 0.6;
+    return H / 2 + (H * 0.34) * Math.cos(2 * Math.PI * t);
+  }
+
+  function drawWavePath(yFn, color, dash, lw) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.setLineDash(dash);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lw;
+    ctx.lineJoin = 'round';
+    for (let x = 0; x <= W; x += 2) {
+      x === 0 ? ctx.moveTo(x, yFn(x)) : ctx.lineTo(x, yFn(x));
+    }
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawCrosshair(x) {
+    // vertical guide
+    ctx.save();
+    ctx.strokeStyle = INK + '0.25)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, H);
+    ctx.stroke();
+    ctx.restore();
+    // dots on each wave
+    [solidY, dashedY].forEach(fn => {
+      const cy = fn(x);
+      ctx.beginPath();
+      ctx.arc(x, cy, 4.5, 0, Math.PI * 2);
+      ctx.fillStyle = INK + '0.9)';
+      ctx.fill();
+      ctx.strokeStyle = BG;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = BG;
+    ctx.fillRect(0, 0, W, H);
+
+    // centre axis line
+    ctx.save();
+    ctx.strokeStyle = INK + '0.15)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, H / 2);
+    ctx.lineTo(W, H / 2);
+    ctx.stroke();
+    ctx.restore();
+
+    drawWavePath(dashedY, INK + '0.4)', [4, 6], 1.4);
+    drawWavePath(solidY,  INK + '0.9)', [],     2);
+
+    if (hoverX !== null) {
+      drawCrosshair(hoverX);
+    } else {
+      // auto-sweep dot on solid wave
+      const ax = ((offset * W / 2) % W + W) % W;
+      drawCrosshair(ax);
+    }
+  }
+
+  function loop() {
+    if (!paused) offset += 0.012;
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    hoverX = e.clientX - rect.left;
+    paused = true;
+  });
+  canvas.addEventListener('mouseleave', () => {
+    hoverX = null;
+    paused = false;
+  });
+
+  window.addEventListener('resize', resize);
   resize();
   loop();
 })();
