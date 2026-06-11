@@ -4,13 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<meta name="description" content="Synthlab builds bespoke synthetic datasets for AI and ML training — procedurally generated, pixel-perfect, built to find the faults and edge cases real-world data can't capture.">
+<meta name="description" content="Synthlab builds bespoke synthetic datasets for AI and ML training. Procedurally generated, pixel-perfect training data for manufacturing fault and edge-case detection.">
+<link rel="canonical" href="https://synthlab.io/">
 <meta property="og:title" content="Synthlab — Bespoke Synthetic Data for AI/ML Training">
 <meta property="og:description" content="Procedurally generated, pixel-perfect training data built to find the faults and edge cases real-world datasets can't capture.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/RGB.png">
+<meta property="og:url" content="https://synthlab.io/">
+<meta property="og:image" content="https://synthlab.io/assets/RGB.png">
+<meta property="og:site_name" content="Synthlab">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Synthlab — Bespoke Synthetic Data for AI/ML Training">
+<meta name="twitter:description" content="Procedurally generated, pixel-perfect training data for manufacturing fault and edge-case detection.">
+<meta name="twitter:image" content="https://synthlab.io/assets/RGB.png">
 <title>Synthlab — Bespoke Synthetic Data for AI/ML Training</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Synthlab",
+  "url": "https://synthlab.io",
+  "email": "info@synthlab.io",
+  "description": "Producer of bespoke synthetic datasets for AI and ML training, focused on fault and edge-case detection in manufacturing.",
+  "logo": "https://synthlab.io/apple-touch-icon.png",
+  "knowsAbout": ["synthetic data", "computer vision", "machine learning training data", "manufacturing fault detection", "simulation"]
+}
+</script>
 </head>
 <body>
 
@@ -164,11 +185,17 @@
   </div>
   <div class="showcase">
     <figure>
-      <img src="assets/RGB.png" alt="Photorealistic simulated RGB render of a manufacturing component" width="1920" height="1080" loading="lazy" decoding="async">
+      <picture>
+        <source srcset="assets/RGB.webp" type="image/webp">
+        <img src="assets/RGB.png" alt="Photorealistic simulated RGB render of a manufacturing component" width="1920" height="1080" loading="lazy" decoding="async">
+      </picture>
       <figcaption><strong>Photorealistic RGB render</strong> — lighting, materials, and imperfections, all simulated.</figcaption>
     </figure>
     <figure>
-      <img src="assets/annotated_bounding_box.png" alt="The same image with an automatically generated bounding box annotation" width="1920" height="1080" loading="lazy" decoding="async">
+      <picture>
+        <source srcset="assets/annotated_bounding_box.webp" type="image/webp">
+        <img src="assets/annotated_bounding_box.png" alt="The same image with an automatically generated bounding box annotation" width="1920" height="1080" loading="lazy" decoding="async">
+      </picture>
       <figcaption><strong>Auto-generated bounding box annotation</strong> — exact, consistent, produced at render time.</figcaption>
     </figure>
   </div>
